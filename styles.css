@@ -1,0 +1,128 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+.active-slide {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.slide-enter {
+  display: block;
+  opacity: 0;
+  transform: translate(100%, -50%);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translate(-100%, -50%);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #f1c40f;
+}
+
+.slide pre {
+  text-align: left;
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 300px;
+  font-size: 20px;
+}
+
+.navigation-buttons {
+  margin-top: 0;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.navigation-buttons button {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #f39c12;
+  color: #fff;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.navigation-buttons button:hover {
+  background: #e67e22;
+  transform: translateY(-3px);
+}
+
+.navigation-buttons button:disabled {
+  background: #b37d4d;
+  cursor: not-allowed;
+}
